@@ -1,0 +1,19 @@
+[Unit]
+Description=Todo App API (Node + Postgres)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/todo-app
+Environment="DB_HOST=todo-rds-postgres.c5isy6kyq7c8.eu-west-1.rds.amazonaws.com"
+Environment="DB_PORT=5432"
+Environment="DB_USER=todo_user"
+Environment="DB_PASSWORD=CHANGE_ME_DB_PASSWORD"
+Environment="DB_NAME=todo_db"
+Environment="PORT=3000"
+ExecStart=/usr/bin/node /opt/todo-app/server.js
+Restart=on-failure
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target
