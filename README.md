@@ -516,27 +516,6 @@ And that’s the whole point for Phase 2: **serverless can dramatically reduce t
 
 ---
 
-## 13. Phase 2 Preview – Serverless Migration
 
-Phase 1 proves:
-
-- I can design and operate a **classic 3-tier EC2 architecture**:
-  - 2× ALBs
-  - 2× EC2 ASGs
-  - Bastion
-  - NAT
-  - RDS
-
-Next, in **Phase 2**, I’ll:
-
-1. Convert this into a **serverless architecture**:
-   - Frontend: React SPA hosted on **S3 + CloudFront**
-   - API: **API Gateway + Lambda** instead of app ALB + EC2
-   - DB: Either keep RDS (with RDS Proxy) or explore Aurora Serverless / DynamoDB
-
-2. Compare:
-   - **Cost**: fixed hourly infra (EC2, NAT, ALB, EIP) vs pay-per-use
-   - **Operations**: patching + scaling EC2 vs Lambda & managed services
-   - **Security**: SG-heavy vs more managed edges (CloudFront, WAF, IAM auth)
 
 
